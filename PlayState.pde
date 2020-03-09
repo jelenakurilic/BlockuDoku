@@ -52,7 +52,7 @@ void PlayState(){
   kraj = true;
   for(Mino a: m)
     if(a.isEnable()){
-      if(!a.possible()) {stroke(0,0,255); a.draw();}
+      if(!a.possible()) {stroke(255,0,0); a.draw();}
       else kraj = false;
     }
   if(kraj) {
