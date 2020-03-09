@@ -6,6 +6,7 @@ void EndState(){
   //pozadina
   background(pozadinaEnd);
   
+  //crtanje zavrsnog zaslona
   fill(154,205,50);
   textSize(60);
   textAlign(CENTER);
@@ -14,10 +15,6 @@ void EndState(){
   else text("Game Over\nBetter luck next time! :)", width/2, height/2-100);
   textSize(70);
   text("Your Score: "+grid.getScore(), width/2, height/2+100);
-  
-  
-  
-  
   
   //crtanje gumbica
   if (overRect(260, 620, 150, 60))
@@ -40,6 +37,7 @@ void EndState(){
   
 }
 
+//Zapis rezultata u tekstualnu datoteku
 void zapisiRezultat() {
   if(topDeset.size() < 10) {
       top10 = true;

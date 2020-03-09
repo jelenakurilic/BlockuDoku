@@ -7,6 +7,7 @@ Minim minim, oblikMinim; //audio context
 
 PImage icon;
 
+// stanja igre
 static final int Start = 0;
 static final int Play = 1;
 static final int End = 2;
@@ -14,21 +15,18 @@ static final int Scores = 3;
 static final int Rules = 4;
 
 int State;
-boolean kraj = true;
-int time = 20;
-int Time = 20;
-int startTime = 0;
+boolean kraj = true; //kraj igre
+int time = 20; //trenutno vrijeme
+int Time = 20; //sveukupno vrijeme
+int startTime = 0; //vrijeme pocetka odbrojavanja timera
 
 IntList topDeset = new IntList();
-boolean top10;
-boolean newHighScore;
+boolean top10; //true ako je trenutni rezultat u top deset
+boolean newHighScore; //true ako je trenutni rezultat novi najbolji rezultat
 
 //pocetne pozicije objekata
 int[] startX = {10, 230, 450};
 int startY = 505;
-
-int offsetX = 0;
-int offsetY = 0;
 
 //ikone za zvuk
 PImage unmute, mute, ikona;
@@ -37,20 +35,21 @@ boolean zvuk = true;
 //pozadine
 PImage pozadinaPlay, pozadinaStart, pozadinaRules, pozadinaEnd, pozadinaScores;
 
+//odabrani oblik koji se stavlja na plocu
 Mino selected;
 
-
+//oblici ponudjeni za postavljanje na plocu
 ArrayList<Mino> m = makeMinos();
 
 int blockSize = 50;
-Grid grid = new Grid();
+Grid grid = new Grid(); //ploca za igru
 
 void setup() {
   size(670, 750);
   State = Start;
-  icon = loadImage("icons.png");
+  icon = loadImage("icons.png"); //ikonica u kojoj pise score
   PImage game = loadImage("game.png");
-  surface.setIcon(game);
+  surface.setIcon(game); //postavljanje ikone igre
   
   
   //reproduciranje pozadinske muzike

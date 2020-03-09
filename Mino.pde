@@ -1,5 +1,5 @@
 /**
-  Ova klasa predstvalja obceniti objekt na kojem se grade svi ostali objekti: 
+  Ova klasa predstvalja opceniti objekt na kojem se grade svi ostali objekti: 
         Monomino, Domino, Trimino, TetroMino, Pentomino.
 */
 
@@ -54,8 +54,8 @@ abstract class Mino {
   Crtanje objekta
   */
   public void draw() {
-    int nXs = X-offsetX;
-    int nYs = Y-offsetY;
+    int nXs = X;
+    int nYs = Y;
     fill(150);
     int nY = nYs;
     for(int i = 0; i < content[0].length; i++) {
@@ -101,8 +101,10 @@ abstract class Mino {
     this.Y = this.startY;
   }
   
-   
-   public boolean possible(){
+  /**
+  Provjerava je li trenutni oblik moguce staviti na plocu
+  */
+  public boolean possible(){
      boolean dobar = true;
      for(int i = 0; i < grid.getN(); i++)
        for(int j = 0; j < grid.getN(); j++){
@@ -137,7 +139,7 @@ abstract class Mino {
 }
 
 /**
-Pomocna funkcija koja na slucajan nacin stvara 3 minosa.
+Pomocna funkcija koja na slucajan nacin stvara 3 oblika.
 */
 ArrayList<Mino> makeMinos(){
   ArrayList<Mino> m= new ArrayList<Mino>(3);

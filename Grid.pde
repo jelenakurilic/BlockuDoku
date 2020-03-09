@@ -1,12 +1,16 @@
+/**
+  Ova klasa predstvalja plocu za igru. sadrzi metode koje sluze za crtanje ploce, update stanja na ploci, cratnje blokova,
+  azuriranje i cratanje rezultata...
+*/
 class Grid {
-  private int n = 9;
-  private int blockSize = 50;
+  
+  private int n = 9; //broj blokova
+  private int blockSize = 50; //velicina bloka
   private int heightBoard = 450;
   private int widthBoard = 450;
   private boolean[][] board;
   private int score = 0;
-  
-  
+   
   public Grid() {
     this.board = new boolean[n][n];
   }
@@ -211,7 +215,6 @@ class Grid {
 }
   
   public String toString() {
-    
     String s = "";
     for(int i = 0; i < board[0].length; i++) {
       for(int j = 0; j < board[0].length; j++) {
